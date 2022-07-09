@@ -33,9 +33,20 @@ rm ~/foundry/foundryvtt.zip
 # Set up pm2 to start foundry vtt at system startup or reboot.
 pm2 start "node /home/ubuntu/foundry/resources/app/main.js --dataPath=/home/ubuntu/foundryuserdata" --name foundry
 pm2 save
-
+# Setting up Caddy reverse proxy
+curl -o Caddyfile https://raw.githubusercontent.com/aco-rt/Foundry-VTT-Oracle/main/Caddyfile
 sudo rm /etc/caddy/Caddyfile
 sudo mv Caddyfile /etc/caddy/Caddyfile
 echo "please enter the domain url your players will use to connect to your server"
 read vtturl
 sed -i "s/your.hostname.com/$vtturl/g" Caddyfile
+sudo service caddy restart
+# Edit foundry options.json file to allow connections through proxy and 443
+sed -i 's/\"proxyPort\": null/\"proxyPort\": 443/g' /home/ubuntu/foundryuserdata/Config/options.json
+sed -i 's/\"proxySSL\": false/\"proxySSL\": true/g' /home/ubuntu/foundryuserdata/Config/options.json
+# Restarting the system to complete installation
+sleep 2
+clear
+echo "Restarting the system to complete installation"
+sleep 3
+sudo shutdown -r now
