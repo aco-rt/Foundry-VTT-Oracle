@@ -13,18 +13,10 @@ Click on the try OCI for free button, follow the instructions and make an accoun
 
 ## Step 3 : Get the foundryOracle.sh script 
 
-This script will get the system updated and get the required support software installed.
-
-Now check if the support software installed are properly installed by running --version options
-
-```
-node --version
-npm --version
-pm2 --version
-```
-
-These should output version numbers of node, npm, pm2 etc.
+This script will get the system updated and get the required support software installed, and It will ask for a timed download url. See step 4.
 
 ## Step 4 : Download Foundry NodeJS version
 
-Select the recommended version and Linux/NodeJS version in the downloads options. Click on the Timed URL button to copy a download url. Not the Download button. We need the link to download foundryVTT.
+Select the recommended version and Linux/NodeJS version in the downloads options. Click on the Timed URL button to copy a download url. Not the Download button. We need the link to download foundryVTT from the command line. Now paste (crtl+v or right click paste) your url that was copied to the clipboard. Hurry you only have 5 mins to do this step. press enter.
+
+Now relax, you are almost done.
