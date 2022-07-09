@@ -33,3 +33,9 @@ rm ~/foundry/foundryvtt.zip
 # Set up pm2 to start foundry vtt at system startup or reboot.
 pm2 start "node /home/ubuntu/foundry/resources/app/main.js --dataPath=/home/ubuntu/foundryuserdata" --name foundry
 pm2 save
+
+sudo rm /etc/caddy/Caddyfile
+sudo mv Caddyfile /etc/caddy/Caddyfile
+echo "please enter the domain url your players will use to connect to your server"
+read vtturl
+sed -i "s/your.hostname.com/$vtturl/g" Caddyfile

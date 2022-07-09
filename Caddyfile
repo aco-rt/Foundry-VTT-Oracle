@@ -1,0 +1,11 @@
+# This replaces the existing content in /etc/caddy/Caddyfile
+
+# A CONFIG SECTION FOR YOUR HOSTNAME
+your.hostname.com {
+    # PROXY ALL REQUEST TO PORT 30000
+    reverse_proxy localhost:30000
+    encode zstd gzip
+}
+
+# Refer to the Caddy docs for more information:
+# https://caddyserver.com/docs/caddyfile
