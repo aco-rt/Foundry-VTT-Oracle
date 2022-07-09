@@ -15,5 +15,16 @@ Click on the try OCI for free button, follow the instructions and make an accoun
 
 This script will get the system updated and get the required support software installed.
 
+Now check if the support software installed are properly installed by running --version options
+
+```
+node --version
+npm --version
+pm2 --version
+```
+
+These should output version numbers of node, npm, pm2 etc.
+
 ## Step 4 : Download Foundry NodeJS version
 
+Select the recommended version and Linux/NodeJS version in the downloads options. Click on the Timed URL button to copy a download url. Not the Download button. We need the link to download foundryVTT.
