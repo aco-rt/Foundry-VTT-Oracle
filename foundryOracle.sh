@@ -8,7 +8,7 @@ sudo iptables -I INPUT 6 -m state --state NEW -p tcp --match multiport --dports 
 # save this configuration
 sudo netfilter-persistent save
 # install nodejs, pm2, nano, unzip
-sudo apt install nano unzip -y
+sudo apt install curl nano unzip -y
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt install -y nodejs
 sudo npm install pm2 -g
@@ -25,7 +25,7 @@ curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo 
 sudo apt update
 sudo apt install caddy
 # Enter Foundry timed url for download
-echo "please enter the foundry vtt timed download url"
+echo "please enter the foundry vtt timed download url for the NodeJS version"
 read tdurl
 wget --output-document ~/foundry/foundryvtt.zip "$tdurl"
 unzip ~/foundry/foundryvtt.zip -d ~/foundry/
@@ -39,11 +39,11 @@ sudo rm /etc/caddy/Caddyfile
 sudo mv Caddyfile /etc/caddy/Caddyfile
 echo "please enter the domain url your players will use to connect to your server"
 read vtturl
-sed -i "s/your.hostname.com/$vtturl/g" Caddyfile
+sudo sed -i "s/your.hostname.com/$vtturl/g" /etc/caddy/Caddyfile
 sudo service caddy restart
 # Edit foundry options.json file to allow connections through proxy and 443
-sed -i 's/\"proxyPort\": null/\"proxyPort\": 443/g' /home/ubuntu/foundryuserdata/Config/options.json
-sed -i 's/\"proxySSL\": false/\"proxySSL\": true/g' /home/ubuntu/foundryuserdata/Config/options.json
+sed -i 's/"proxyPort": null/"proxyPort": 443/g' /home/ubuntu/foundryuserdata/Config/options.json
+sed -i 's/"proxySSL": false/"proxySSL": true/g' /home/ubuntu/foundryuserdata/Config/options.json
 # Restarting the system to complete installation
 sleep 2
 clear
