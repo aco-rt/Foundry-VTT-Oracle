@@ -1,6 +1,6 @@
 # Installing FoundryVTT on Oracle Free tier.
 
-## Step 1 : Create an Account on Oracle Free tier
+## Step 1 : Create an Account on Oracle Cloud.
 
 Its free to Create an account on [https://www.oracle.com/cloud/](https://www.oracle.com/cloud/)
 
@@ -9,17 +9,17 @@ Click on the try OCI for free button, follow the instructions and make an accoun
 - A valid credit or debit card (You will be charged a small amount, a few cents, to check if the tranaction goes through, and then you will be refunded, so free.)
 - A valid phone number. They want to make sure you are not a bot.
 
-## Step 2 : Get a domain
-
-You may purchase a domain from a domain registrar of your choice, or do what I did and use noip to get 3 free dynamic dns domains (ddns). Just A record will be enough. Watch the video on how to do it, if you find the process a bit confusing. You will need this url which points to your ip.
-
-## Step 3 : Get an instance running
+## Step 2 : Get an instance running
 
 Get an oracle free tier instance running with the correct ports open. See the video on how to do this.
 
+## Step 3 : Get a domain
+
+You may purchase a domain from a domain registrar of your choice, or do what I did and use noip to get 3 free dynamic dns domains (ddns). Just A record will be enough. Watch the video on how to do it, if you find the process a bit confusing. You will need this url which points to your Oracle instance ip.
+
 ## Step 4 : Get the foundryOracle.sh script 
 
-This script will install foundry VTT on your new instance. It will get the system updated and get the required support software installed, and It will ask for a foundryVTT timed download url, and the url you made earlier with noip or something similar.
+Now let's connect to the instance and start the installation process. This script will install foundry VTT on your new instance. It will get the system updated and get the required support software installed, and It will ask for a foundryVTT timed download url, and the url you made earlier with noip or something similar.
 
 On your new instance run the following.
 
