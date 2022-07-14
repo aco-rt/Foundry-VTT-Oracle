@@ -18,7 +18,7 @@ Get an oracle free tier instance running with the correct ports open. See the vi
 You may purchase a domain from a domain registrar of your choice, or do what I did and use noip to get 3 free dynamic dns domains (ddns). Just A record will be enough. Watch the video on how to do it, if you find the process a bit confusing. You will need this url which points to your Oracle instance ip.
 
 Note: Before step 4 you will need to connect to your new VPS. Here are some tips.
-Use a terminal emulator/application. Depending on your Operating system you may have to move the private key you got to the Documents folder. On windows it doesn't matter, but on certain Linux distributions the permissions are a bit different in the downloads folder. To connect first cd into your folder containing the private key, then try using a command like
+Use a terminal emulator/application. Depending on your Operating system you may have to move the private key you got to the Documents folder. On windows it doesn't matter, but on certain Linux distributions, and in certain versions of the macOS, the permissions are a bit different in the downloads folder. To connect first cd into your folder containing the private key, then try using a command like
 
 ```
 ssh -i yourRenamedPrivatekey.key ubuntu@yourNewNoIpDomain.ddns.net
