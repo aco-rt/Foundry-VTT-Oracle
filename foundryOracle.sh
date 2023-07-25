@@ -12,6 +12,8 @@ sudo apt install curl nano unzip -y
 curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt install -y nodejs
 sudo npm install pm2 -g
+sudo npm update -g pm2
+sudo pm2 update
 #allow pm2 to start and stop after reboot
 pm2 startup
 sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
@@ -44,6 +46,7 @@ sudo service caddy restart
 # Edit foundry options.json file to allow connections through proxy and 443
 sed -i 's/"proxyPort": null/"proxyPort": 443/g' /home/ubuntu/foundryuserdata/Config/options.json
 sed -i 's/"proxySSL": false/"proxySSL": true/g' /home/ubuntu/foundryuserdata/Config/options.json
+sed -i 's/"hostname": null/"hostname": "$vtturl"/g' /home/ubuntu/foundryuserdata/Config/options.json
 # Restarting the system to complete installation
 sleep 2
 clear
