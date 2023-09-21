@@ -9,8 +9,12 @@ sudo iptables -I INPUT 6 -m state --state NEW -p tcp --match multiport --dports 
 sudo netfilter-persistent save
 # install nodejs, pm2, nano, unzip
 sudo apt install curl nano unzip -y
-curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt install -y nodejs
+sudo apt install -y ca-certificates curl gnupg
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+sudo apt update
+sudo apt install nodejs -y
 sudo npm install pm2 -g
 sudo npm update -g pm2
 sudo pm2 update
