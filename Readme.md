@@ -11,7 +11,7 @@ Click on the try OCI for free button, follow the instructions and make an accoun
 
 ## Step 2 : Get an instance running
 
-Get an oracle free tier instance running with the correct ports open. See the video on how to do this.
+Get an oracle free tier instance running with the correct ports open. See the video on how to do this. Important point is to use the latest Ubuntu version available, currently v22.
 
 ## Step 3 : Get a domain
 
