@@ -15,7 +15,7 @@ echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.co
 sudo apt update
 sudo apt install -y nodejs
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 # Set pm2 to use the upgraded version of NodeJS and set it to run on start again.
 npm rebuild -g pm2
 pm2 startup
@@ -24,15 +24,15 @@ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -
 pm2 start all
 pm2 save
 # This concludes the nodejs update.
-# Let's update foundry to v11 here
+# Let's update foundry to v12 here
 # stopping foundry
 pm2 stop foundry
 # making a copy so we can go back if needed.
-mv foundry foundry-archive-v10
+mv foundry foundry-archive-v11
 # Getting and installing foundry
 mkdir ~/foundry
 # Enter Foundry timed url for download
-echo "please enter the foundry vtt v11 timed download url for the Linux NodeJS version"
+echo "please enter the foundry vtt v12 timed download url for the Linux NodeJS version"
 read tdurl
 wget --output-document ~/foundry/foundryvtt.zip "$tdurl"
 unzip ~/foundry/foundryvtt.zip -d ~/foundry/
