@@ -4,7 +4,7 @@
 # update the system and remove older packages
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean
 #update the iptables to open ports 80, 443, 30000
-sudo iptables -I INPUT 6 -m state --state NEW -p tcp --match multiport --dports 80,443,30000 -j ACCEPT
+sudo iptables -I INPUT 5 -m state --state NEW -p tcp --match multiport --dports 80,443,30000 -j ACCEPT
 # save this configuration
 sudo netfilter-persistent save
 # install nodejs, pm2, nano, unzip
@@ -12,7 +12,7 @@ sudo apt install curl nano unzip -y
 sudo apt install -y ca-certificates curl gnupg
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_22.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 sudo apt update
 sudo apt install nodejs -y
 sudo npm install pm2 -g
@@ -37,7 +37,7 @@ wget --output-document ~/foundry/foundryvtt.zip "$tdurl"
 unzip ~/foundry/foundryvtt.zip -d ~/foundry/
 rm ~/foundry/foundryvtt.zip
 # Set up pm2 to start foundry vtt at system startup or reboot.
-pm2 start "node /home/ubuntu/foundry/resources/app/main.js --dataPath=/home/ubuntu/foundryuserdata" --name foundry
+pm2 start "node /home/ubuntu/foundry/main.js --dataPath=/home/ubuntu/foundryuserdata" --name foundry
 pm2 save
 # Setting up Caddy reverse proxy
 curl -o Caddyfile https://raw.githubusercontent.com/aco-rt/Foundry-VTT-Oracle/main/Caddyfile
