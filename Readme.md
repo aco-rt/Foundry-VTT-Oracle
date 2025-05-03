@@ -51,7 +51,7 @@ Note: It will open up screens to ask if you wish to restart some services about 
 
 ## Step 4a : Download Foundry NodeJS version
 
-During the script execution it will ask you for a timed url. This can be found under your user name on the top right of foundryvtt website. Click your user name and then the purchased license tab on the left. Select the recommended version and Linux/NodeJS version in the downloads options. Click on the Timed URL button to copy a download url. Not the Download button. We need the link to download foundryVTT from the command line. Now paste (crtl+v or right click paste) your url that was copied to the clipboard into your cmd/terminal promt. Hurry you only have 5 mins to do this step. press enter.
+During the script execution it will ask you for a timed url. This can be found under your user name on the top right of foundryvtt website. Click your user name and then the purchased license tab on the left. Select the recommended version and NodeJS version in the downloads options. Click on the Timed URL button to copy a download url. Not the Download button. We need the link to download foundryVTT from the command line. Now paste (crtl+v or right click paste) your url that was copied to the clipboard into your cmd/terminal promt. Hurry you only have 5 mins to do this step. press enter.
 
 Now relax, you are almost done.
 
