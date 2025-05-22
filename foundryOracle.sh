@@ -50,7 +50,7 @@ sudo service caddy restart
 # Edit foundry options.json file to allow connections through proxy and 443
 sed -i 's/"proxyPort": null/"proxyPort": 443/g' /home/ubuntu/foundryuserdata/Config/options.json
 sed -i 's/"proxySSL": false/"proxySSL": true/g' /home/ubuntu/foundryuserdata/Config/options.json
-sed -i 's/"hostname": null/"hostname": "$vtturl"/g' /home/ubuntu/foundryuserdata/Config/options.json
+sed -i 's/"hostname": null/"hostname": '"$vtturl"'/g' /home/ubuntu/foundryuserdata/Config/options.json
 # Restarting the system to complete installation
 sleep 2
 clear
