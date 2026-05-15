@@ -61,6 +61,27 @@ Once you have entered it, it will restart the system. Give it 30 seconds or so t
 
 Note: if you are using cloudflair as your domain name registrar, make sure to use full encription, that allows the use of 3rd part ssl certificates, as we are using caddy to get a let's encrypt certificate in this method. If you are well versed with hosting websites and SSL stuff, feel free to change the script to your preference.
 
+# Upgrading from v13 to v14. (updated on 05/15/2026)
+
+On your foundry v13 instance run the following.
+
+```
+curl -o foundryupdatev13-v14.sh https://raw.githubusercontent.com/aco-rt/Foundry-VTT-Oracle/main/foundryUpdatev14.sh
+```
+
+Once that file has downloaded, we will need to make it executable so run
+
+```
+chmod a+x foundryupdatev13-v14.sh
+```
+Now that its executable, let's execute it by running
+
+```
+./foundryupdatev13-v14.sh
+```
+
+Then enter the details asked. This version needed a nodejs update, from 22 to 24.
+
 # Upgrading from v12 to v13. (updated on 05/03/2025)
 
 On your foundry v12 instance run the following.
