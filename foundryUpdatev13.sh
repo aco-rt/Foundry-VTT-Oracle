@@ -34,7 +34,7 @@ mv foundry foundry-archive-v12
 # Getting and installing foundry
 mkdir ~/foundry
 # Enter Foundry timed url for download
-echo "please enter the foundry vtt v13 timed download url for the Linux NodeJS version"
+echo "please enter the foundry vtt v13 timed download url for the NodeJS version"
 read tdurl
 wget --output-document ~/foundry/foundryvtt.zip "$tdurl"
 unzip ~/foundry/foundryvtt.zip -d ~/foundry/
