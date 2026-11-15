@@ -61,6 +61,31 @@ Once you have entered it, it will restart the system. Give it 30 seconds or so t
 
 Note: if you are using cloudflair as your domain name registrar, make sure to use full encription, that allows the use of 3rd part ssl certificates, as we are using caddy to get a let's encrypt certificate in this method. If you are well versed with hosting websites and SSL stuff, feel free to change the script to your preference.
 
+# Updating within the same major version, e.g. v14.369 to v14.370. (updated on 11/06/2026)
+ 
+Use this for patch builds inside the same major version. It does not change NodeJS or pm2, and it does not reboot the instance. If you are moving to a new major version (e.g. v13 to v14), use the matching upgrade script below instead.
+ 
+Option 1: in Foundry, go to the Setup screen, open the Update Software tab, click Check for Update and then Update. Back up your `foundryuserdata` folder first.
+ 
+Option 2: on your foundry instance, run the following.
+ 
+```
+curl -o foundryUpdatePatch.sh https://raw.githubusercontent.com/aco-rt/Foundry-VTT-Oracle/main/foundryUpdatePatch.sh
+```
+ 
+Once that file has downloaded, we will need to make it executable so run
+ 
+```
+chmod a+x foundryUpdatePatch.sh
+```
+Now that its executable, let's execute it by running
+ 
+```
+./foundryUpdatePatch.sh
+```
+ 
+When asked, paste the timed url for the new build (NodeJS version, see Step 4a). The script stops Foundry, moves the old install to a `foundry-archive-<date>` folder, backs up `foundryuserdata` to a `foundryuserdata-backup-<date>.tar.gz` file, installs the new build and starts Foundry again. Once you have checked the new version works, you can delete the archive folder.
+
 # Upgrading from v13 to v14. (updated on 05/15/2026)
 
 On your foundry v13 instance run the following.
