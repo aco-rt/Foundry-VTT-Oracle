@@ -11,6 +11,8 @@ read tdurl
 # Stop Foundry
 pm2 stop foundry
 
+echo "Please be patient, backups are being made"
+
 # Back up the current install and user data so you can roll back
 stamp=$(date +%Y%m%d-%H%M)
 mv foundry "foundry-archive-$stamp"
