@@ -5,13 +5,11 @@
 set -e
 cd /home/ubuntu
 
-echo "Please enter the Foundry VTT timed download URL (NodeJS version) for the new build:"
+echo "This process can take a few minutes. Please be patient. Please enter the Foundry VTT timed download URL (NodeJS version) for the new build:"
 read tdurl
 
 # Stop Foundry
 pm2 stop foundry
-
-echo "Please be patient, backups are being made"
 
 # Back up the current install and user data so you can roll back
 stamp=$(date +%Y%m%d-%H%M)
